@@ -1,0 +1,426 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Blog">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="https://charmsun.github.io">
+    <!--SEO-->
+
+<meta name="description" content="web前端 后端 AI 机器学习"/>
+
+
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+
+<title>前端持续集成 | Blog</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css?rev=3.3.4">
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+</head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header"  style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner2.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='Charm Sun'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 自天佑之，吉无不利 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/资源/"><i class="fa "></i>资源</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="前端持续集成">
+            
+	            前端持续集成
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/前端">
+            前端
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/前端工程化" title='前端工程化'>
+                        前端工程化
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/04/03</span>
+        </span>
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p>编写代码只是软件开发的一小部分，更多的时间往往花在构建（build）和测试（test）。之前介绍了前端的单元测试，这篇再介绍和实践一下前端的持续集成（Continuous integration），简写为CI。</p>
+<h2 id="什么是持续集成"><a href="#什么是持续集成" class="headerlink" title="什么是持续集成"></a>什么是持续集成</h2><blockquote>
+<p>持续集成是一种软件开发实践，即团队开发成员经常集成他们的工作，通过每个成员每天至少集成一次，也就意味着每天可能会发生多次集成。每次集成都通过自动化的构建（包括编译，发布，自动化测试）来验证，从而尽早地发现集成错误。</p>
+</blockquote>
+<p>持续集成的益处：</p>
+<ul>
+<li>减少风险</li>
+<li>减少重复过程</li>
+<li>任何时间、任何地点生成可部署的软件</li>
+<li>增强项目的可见性</li>
+<li>建立团队对开发产品的信心</li>
+</ul>
+<h2 id="集成工具"><a href="#集成工具" class="headerlink" title="集成工具"></a>集成工具</h2><p>GitHub 上比较主流的持续集成工具有 <a href="https://travis-ci.org/" target="_blank" rel="noopener">Travis CI</a> 和 <a href="https://circleci.com/" target="_blank" rel="noopener">Circle CI</a>；分别占市场占有率前两位，两者的功能和使用都比较相似，其中Travis CI用的最多，就选择Travis CI进行介绍。</p>
+<p>Travis CI 只支持 Github，不支持其他代码托管服务。这意味着，你必须满足以下条件，才能使用 Travis CI。</p>
+<ul>
+<li>拥有 GitHub 帐号</li>
+<li>该帐号下面有一个项目</li>
+<li>该项目里面有可运行的代码</li>
+<li>该项目还包含构建或测试脚本</li>
+</ul>
+<p>Travis有两个网址，org的那个是非盈利的，为GitHub上public的repository提供免费服务；com的那个是盈利的，可以对private的提供付费服务。com前100次build是免费的，此后按月收费。</p>
+<p>使用很简单，用GitHub 账号登录后,Travis 会列出 Github 上面你的所有仓库，以及你所属于的组织。此时，选择你需要 Travis 帮你构建的仓库，打开仓库旁边的开关。一旦激活了一个仓库，Travis 会监听这个仓库的所有变化。</p>
+<p><img src="./travis.jpg" alt=""></p>
+<p>流程很简明，但绝大多数复杂度都集中在这个<code>.travis.yml</code>文件。这是一个<a href="https://baike.baidu.com/item/YAML?fr=aladdin" target="_blank" rel="noopener">YAML</a>文件，主要用来做CI的配置。Travis会按照这个文件配置的方式来运行。<br>以下是项目中使用travis的简单例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">language: node_js</span><br><span class="line"></span><br><span class="line">node_js:</span><br><span class="line">  - &quot;8&quot;</span><br><span class="line"></span><br><span class="line">install:</span><br><span class="line">  - npm install -g codecov</span><br><span class="line">  - npm install</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">before_script:</span><br><span class="line">  - &quot;export DISPLAY=:99.0&quot;</span><br><span class="line">  - &quot;sh -e /etc/init.d/xvfb start&quot;</span><br><span class="line">  - sleep 3 # give xvfb some time to start</span><br><span class="line"></span><br><span class="line">script:</span><br><span class="line">  - cross-env TRAVIS=true karma start --single-run</span><br><span class="line">  - codecov</span><br></pre></td></tr></table></figure></p>
+<p>Travis 的运行流程很简单，任何项目都会经过两个阶段。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- install 阶段：安装依赖</span><br><span class="line">- script 阶段：运行脚本</span><br></pre></td></tr></table></figure>
+<p>Node 项目的install和script阶段都有默认脚本，可以省略。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- install 默认值：npm install</span><br><span class="line">- script 默认值：npm test</span><br></pre></td></tr></table></figure>
+<p>完整的生命周期，从开始到结束是下面的流程:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1. before_install</span><br><span class="line">2. install</span><br><span class="line">3. before_script</span><br><span class="line">4. script</span><br><span class="line">5. aftersuccess or afterfailure</span><br><span class="line">6. [OPTIONAL] before_deploy</span><br><span class="line">7. [OPTIONAL] deploy</span><br><span class="line">8. [OPTIONAL] after_deploy</span><br><span class="line">9. after_script</span><br></pre></td></tr></table></figure>
+<p>更多用法可查阅<a href="https://docs.travis-ci.com/" target="_blank" rel="noopener">官方文档</a>，官方文档比较详细。</p>
+<p>在上面的例子中，每次代码 push 以后，Travis 会自动开始构建，并运行单测，最后得到构建<br>状态如下</p>
+<p><img src="./travis-status.jpg" alt=""></p>
+<p>点击状态图标，可以在弹出界面中得到该项目的状态图标链接。放到repository的README.md中，就可以在GitHub页面得到编译状态的展示了。</p>
+<p>另外，如果多次提交同时push，默认只在最新提交执行一次build；在git commit中如果包含<code>[skip ci]</code>或<code>[ci skip]</code>，该提交就不会触发一次build。</p>
+<h2 id="集成测试覆盖率工具"><a href="#集成测试覆盖率工具" class="headerlink" title="集成测试覆盖率工具"></a>集成测试覆盖率工具</h2><p>代码覆盖率报告可以为编写测试程序提供参考，通过一些工具，还可以及时的把你的代码的测试情况及时的反馈给用户，让用户感知你的测试是否完备。</p>
+<p>GitHub 上比较主流的代码覆盖率集成工具有 <a href="https://codecov.io/gh" target="_blank" rel="noopener">codecov</a> 和 <a href="https://coveralls.io/" target="_blank" rel="noopener">coveralls</a>；两者也差不多，在之前travis的例子中选择使用了codecov。</p>
+<p>同样使用GitHub 账号登录，第一次使用时，默认是没有 repository 的，需要通过点击 <code>+ Add my first repository</code> 来添加需要 codecov 管理的 repository。无论 codecov 还是 coveralls，它自身都不会去运行测试用例来获得项目代码的覆盖率，而是通过收集覆盖率报告及其他关键信息来静态分析。codecov 可以接收 lcov, gcov 以及正确的 json 数据格式作为输入信息。</p>
+<p>该例子就是在travis CI 平台中跑完测试用例后，将测试报告中的 lcov 和 json 文件提交至codecov 平台进行覆盖率分析，同样分析的覆盖率结果的徽章图标也能从平台中获取，可以加入到GitHub repository 的README.md中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">language: node_js</span><br><span class="line"></span><br><span class="line">node_js:</span><br><span class="line">  - &quot;8&quot;</span><br><span class="line"></span><br><span class="line">install:</span><br><span class="line">  - npm install -g codecov</span><br><span class="line">  - npm install</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">before_script:</span><br><span class="line">  - &quot;export DISPLAY=:99.0&quot;</span><br><span class="line">  - &quot;sh -e /etc/init.d/xvfb start&quot;</span><br><span class="line">  - sleep 3 # give xvfb some time to start</span><br><span class="line"></span><br><span class="line">script:</span><br><span class="line">  - cross-env TRAVIS=true karma start --single-run</span><br><span class="line">  - codecov</span><br></pre></td></tr></table></figure>
+<h2 id="跨浏览器集成测试"><a href="#跨浏览器集成测试" class="headerlink" title="跨浏览器集成测试"></a>跨浏览器集成测试</h2><p>浏览器端使用的库，在各个浏览器端的兼容性也是非常重要的。跨浏览器测试同样有 2 个选择，<a href="https://saucelabs.com/" target="_blank" rel="noopener">SAUCELABS</a> 和 <a href="https://www.browserstack.com/" target="_blank" rel="noopener">BrowserStack</a>，可以进行浏览器兼容性测试。这里没有详细实践过，怎么操作可以去参考文章看。</p>
+<hr>
+<p>至此，CI 除了能跑跑测试、显示覆盖率之外，还能自动部署发布，怎样部署也在 yaml文件中进行脚本编写，这里就不举例子了。以上说的都是源代码放在 Github 上的开源代码，但相信大家接触得更多的应该是公司的私有代码，私有代码的项目也有 CI 解决方案，就是Jenkins，其前身是 Hudson （相信大家都见过，我们用的所谓的编译平台就是这个东东，但估计主动去用的不多）。</p>
+<h2 id="Jenkins"><a href="#Jenkins" class="headerlink" title="Jenkins"></a>Jenkins</h2><p>这里 搭建了一个 Jenkins， <a href="http://10.134.72.178:8080/jenkins/" target="_blank" rel="noopener">http://10.134.72.178:8080/jenkins/</a>，搭建过程不细说，说下能解决什么问题。比如有这样的场景：</p>
+<ol>
+<li>前后端分离后希望将前端主干代码部署至服务器；</li>
+<li>新项目尚未接入考拉平台，希望可以部署至服务器供联调；</li>
+<li>能每次代码提交后都能自动构建自动部署，无须任何操作；</li>
+<li>项目紧张时，领导希望能看到每天程序员提交代码后，项目的进展情况等。</li>
+</ol>
+<p>这些场景下， Jenkins 都能帮助解决，凡是需要自动构建自动部署的，它都能帮上忙。这里举例大致说下怎么使用，就以将某个业务系统前端代码自动构建部署至nginx服务器为例。</p>
+<p>第一步：新建项目，左边菜单第一项。<br><img src="./step1.jpg" alt=""><br><img src="./step1-1.jpg" alt=""></p>
+<p>第二步：进行相关配置，填写源码配置，可选择仓库源，git和svn都支持。<br><img src="./step2.jpg" alt=""></p>
+<p>第三步：进行构建触发配置，可设置触发构建的情形，例如代码提交时构建，按日程表构建等。<br><img src="./step3.jpg" alt=""></p>
+<p>第四步：填写构建部署脚本。<br><img src="./step4.jpg" alt=""></p>
+<p>第五步：保存并进行构建，查看构建情况。<br><img src="./step5.jpg" alt=""></p>
+<p>详细配置可以上Jenkins中查看，构建过程包括自动更新svn代码，安装或更新npm包，进行webpack打包，将打包后的代码部署至静态资源服务器。至此完成前端代码的构建和部署，每次提交代码，构建过程全自动运行，当状态指示灯变蓝时就表示构建成功，我们可以访问服务器前端资源了。</p>
+<p>这只是一个比较简单的例子，还有不少其他功能，Jenkin有很多插件，总之很强大。当然不同的项目可能会有不同的构建过程，可以自己按需设定构建过程。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>结尾来个段子：</p>
+<blockquote>
+<p>以前我坚持认为代码应该是 clean 的，架构应该是简洁的，流程应该是自动化的，文档应该是齐全的，技术是应该分享的。 效率较高不加班，结果 kpi 被差评，领导认为我无所事事。 最近半年我换了风格，架构重度设计，类名变量模糊不清，没有注释，现在大家都离不开我了，kpi 也上去了。</p>
+</blockquote>
+<p>段子笑一笑而已，最后还是希望能运用到前面的持续集成工具来实现流程自动化，重复性的工作尽量交给机器自己动。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="http://efe.baidu.com/blog/front-end-continuous-integration-tools/" target="_blank" rel="noopener">前端开源项目持续集成三剑客</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2017/12/travis_ci_tutorial.html" target="_blank" rel="noopener">持续集成服务 Travis CI 教程</a></li>
+<li><a href="https://www.jianshu.com/p/f9aa74d3066d" target="_blank" rel="noopener">前端持续集成解决方案</a></li>
+<li><a href="https://www.jianshu.com/p/c80b37f775a0" target="_blank" rel="noopener">从GitHub到Travis</a></li>
+</ul>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/04/03/front-end-unit-testing/" class="pre-post btn btn-default" title='前端自动化单元测试'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">前端自动化单元测试</span>
+        </a>
+    
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+<div id="lv-container" data-id="city" data-uid="MTAyMC8zMzA1MS85NjEz">
+  <script type="text/javascript">
+     (function(d, s) {
+         var j, e = d.getElementsByTagName(s)[0];
+         if (typeof LivereTower === 'function') { return; }
+         j = d.createElement(s);
+         j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+         j.async = true;
+         e.parentNode.insertBefore(j, e);
+     })(document, 'script');
+  </script>
+</div>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+    <aside class="col-md-4 sidebar">
+        
+        
+    <div class="widget">    
+        <h3 class="title">Search</h3>
+        <div id="search-form">
+            <div id="result-mask" class="hide"></div>
+            <div class="search-area">
+                
+                    <input id="search-key" type="search" autocomplete="off" placeholder="搜点什么呢?">
+                    <button type="button" class="search-form-submit" id="search-local">localSearch</button>
+                
+                
+            </div>
+            <div id="result-wrap" class="hide">
+                <div id="search-result"></div>
+            </div>
+            <div class="hide">
+                <template id="search-tpl">
+                    <div class="item">
+                        <a href="/{path}" title="{title}">
+                            <div class="title">{title}</div>
+                            <div class="content">{content}</div>
+                        </a>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+
+        
+        
+    <div class="widget">
+      <h3 class="title">Social</h3> 
+        <div class="content social">
+            
+	            <a href="https://github.com/CharmSun" rel="external nofollow" title="Github" target="_blank">
+			    	<i class="git fa fa-git"></i>
+			    </a>
+            
+	            <a href="mailto:261496906@qq.com" rel="external nofollow" title="邮箱" target="_blank">
+			    	<i class="envelope-o fa fa-envelope-o"></i>
+			    </a>
+            
+	            <a href="/atom.xml" rel="external nofollow" title="RSS" target="_blank">
+			    	<i class="feed fa fa-feed"></i>
+			    </a>
+            
+        </div>
+    </div>
+
+
+        
+        
+    <div class="widget">
+        <h3 class="title">Categories</h3>
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link current" href="/categories/前端/"><i class="fa" aria-hidden="true">前端</i></a><span class="category-list-count">2</span></li></ul>
+    </div>
+
+
+        
+        
+    <div class="widget">
+      <h3 class="title">Archives</h3>
+        <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/"><i class="fa" aria-hidden="true">April 2018</i></a><span class="archive-list-count">2</span></li></ul>
+    </div>
+
+
+        
+        
+  <div class="widget">
+    <h3 class="title">Tag Cloud</h3>
+    <div class="content tag-cloud">
+        <a href="/tags/前端单元测试/" style="font-size: 10px;">前端单元测试</a> <a href="/tags/前端工程化/" style="font-size: 10px;">前端工程化</a>
+    </div>
+  </div>
+
+
+        
+        
+
+        
+    </aside>
+
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2018
+                </span> | 
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | 
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+	<script src="/js/search.js?rev=@@hash"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>
