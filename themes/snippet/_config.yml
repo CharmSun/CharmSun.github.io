@@ -1,0 +1,176 @@
+# ---------------------------------------------------------------
+#   Site Information And Theme Configuration Settings
+#   language: zh-CN
+# ---------------------------------------------------------------
+
+## menu 
+menu:
+- page: home
+  url: /
+  icon: 
+- page: 前端
+  url: /categories/前端/
+  icon: 
+- page: 后端
+  url: /categories/后端/
+  icon: 
+- page: 工具
+  url: /categories/工具/
+  icon: 
+- page: 资源
+  url: /categories/资源/
+  icon: 
+
+## favicon 
+favicon: /favicon.ico
+
+## Feed 
+rss: /atom.xml
+
+
+# 各个小工具的设置
+
+## widgets
+widgets:
+  - search
+  - social
+  - category
+  - archive
+  - tagcloud
+  - friends
+
+## 搜索
+jsonContent:
+  searchLocal: true
+  searchGoogle: false
+  posts:
+    title: true
+    text: true
+    content: true
+    categories: false
+    tags: false
+
+## 网站公告设置
+notification: |-
+            <p>Welcome to Charm's Blog ~ </p>
+
+## 社交设置
+social:
+ - name: Github
+   icon: git
+   href: //github.com/CharmSun
+ - name: 邮箱
+   icon: envelope-o
+   href: mailto:261496906@qq.com
+ - name: RSS
+   icon: feed
+   href: /atom.xml
+
+## 文章分类设置
+cate_config:
+   show_count: true
+   show_current: true
+
+## 文章归档设置
+arch_config:
+   type: 'yearly'
+   show_count: true
+   order: -1
+
+## 友链设置
+links:
+  - Github: https://github.com/CharmSun
+
+
+# 主题自定义个性化配置
+
+## 网站宣传语
+branding: 自天佑之，吉无不利
+
+## 设置banner背景图片
+banner:
+    img: /img/banner.jpg
+
+## 首页列表底部面板
+homePanel: true
+
+## 缩略图自定义随机图片
+defaultImgs:
+  -
+
+## 截取文章首页描述字数
+excerptLength: 120
+
+## 代码高亮配置
+highlightTheme:
+
+## ICON配置
+fontAwesome: //cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css
+
+## 文章过期提醒功能
+warning:
+  days: 300
+  text: '本文于%d天之前发表，文中内容可能已经过时。'
+
+## 文章内声明
+declaration:
+  enable: true
+  title: '转载声明'
+  tip: |-
+      商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Charm's Blog</a>
+
+
+## 主题评论
+
+### gitment
+gitment:
+  enable: false
+  owner: 
+  repo: 
+  client_id: 
+  client_secret: 
+  perPage: 10
+
+### 来必力
+livere: 
+  enable: false
+  livere_uid: MTAyMC8zMzA1MS85NjEz
+
+### 友言评论(服务不稳定)
+uyan:
+  enable: false
+  uyan_id: 1966422
+
+### Disqus评论
+disqus:
+  enable: false
+  shortname: snippet
+  count: false
+
+### 畅言评论(需要ICP备案)
+changyan:
+  enable: false
+  appid: cyt8KmUC1
+  conf: prod_855a68d3b3d91855360a6215672a505a
+
+## 网站访问统计
+
+### 网盟CNZZ统计
+cnzz_analytics:
+
+### 百度统计
+baidu_analytics: 
+
+### 谷歌统计
+google_analytics: 
+
+### 腾讯分析
+tencent_analytics: 
+
+### 百度文章推送
+baidu_push:
+
+#网站主题配置
+since: 2018
+robot: 'all' ### 控制搜索引擎的抓取和索引编制行为，默认为all
+version: 1.2.1
