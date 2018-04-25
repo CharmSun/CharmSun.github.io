@@ -5,8 +5,9 @@ categories:
 - 前端
 tags: 
 - 前端单元测试
+img: /2018/04/03/front-end-unit-testing/brief.jpg
 ---
-# 前言
+
 随着Web业务的日益复杂化和多元化，前端开发也有了前端工程化的概念，前端工程化成为目前前端架构中重要的一环，本质上也是软件工程的一种，因此我们需要从软件工程的角度来研究前端工程，而自动化测试则是软件工程中重要的一环。本文就研究一下前端领域中的自动化测试，以及如何实践。
 
 ## 什么是单元测试
@@ -117,6 +118,7 @@ it.only('do do', () => {
 ```
 
 ## react 单测示例一
+![](mocha.jpg)
 [react 单元测试框架 demo1](https://github.com/CharmSun/react-unit-test-mocha-demo)
 
 该框架采用 karma + mocha + chai + sinon 的组合， 是一种采用工具较多，同时自由度较高的解决方案。虽然工具库使用的较多，但有助于理解各个工具库的作用和使用，也有助于加深对前端单元测试的理解。
@@ -130,6 +132,7 @@ it.only('do do', () => {
 [阮老师React测试入门](http://www.ruanyifeng.com/blog/2016/02/react-testing-tutorial.html)
 
 ## react 单测示例二
+![](jest.png)
 [react 单元测试框架 demo2](https://github.com/CharmSun/react-unit-test-jest-demo)
 
 该框架只采用了Jest，是比较简洁的方案，同样也使用了 enzyme。

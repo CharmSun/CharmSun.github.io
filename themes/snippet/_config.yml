@@ -143,9 +143,9 @@ uyan:
 
 ### Disqus评论
 disqus:
-  enable: false
-  shortname: snippet
-  count: false
+  enable: true
+  shortname: charmsun
+  count: true
 
 ### 畅言评论(需要ICP备案)
 changyan:

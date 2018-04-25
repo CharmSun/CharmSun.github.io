@@ -6,7 +6,7 @@ tags: ['前端工程化']
 comments: true
 img: /2018/04/03/front-end-ci/brief.jpg
 ---
-![](brief.jpg)
+
 编写代码只是软件开发的一小部分，更多的时间往往花在构建（build）和测试（test）。之前介绍了前端的单元测试，这篇再介绍和实践一下前端的持续集成（Continuous integration），简写为CI。
 
 ## 什么是持续集成
