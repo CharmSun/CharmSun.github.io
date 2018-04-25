@@ -290,17 +290,19 @@
 	
   <script id="dsq-count-scr" src="https://charmsun.disqus.com/count.js" async></script>
 
-
+<div id="disqus_thread"></div>
 <script type="text/javascript">
   var disqus_config = function () {
     this.page.url = 'https://charmsun.github.io/2018/04/03/front-end-unit-testing/';
     this.page.identifier = '2018/04/03/front-end-unit-testing/';
     this.page.title = '前端自动化单元测试';
   };
-  var d = document, s = d.createElement('script');
-  s.src = 'https://charmsun.disqus.com/embed.js';
-  s.setAttribute('data-timestamp', '' + +new Date());
-  (d.head || d.body).appendChild(s);
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://charmsun.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', '' + +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
 </script>
 
 
