@@ -14,11 +14,11 @@ menu:
 - page: 后端
   url: /categories/后端/
   icon: 
-- page: 工具
-  url: /categories/工具/
+- page: 随想
+  url: /categories/随想/
   icon: 
-- page: 资源
-  url: /categories/资源/
+- page: 其他知识
+  url: /categories/其他知识/
   icon: 
 
 ## favicon 
@@ -33,6 +33,7 @@ rss: /atom.xml
 ## widgets
 widgets:
   - search
+  - notification
   - social
   - category
   - archive
@@ -52,7 +53,8 @@ jsonContent:
 
 ## 网站公告设置
 notification: |-
-            <p>Welcome to Charm's Blog ~ </p>
+            <p>Welcome to Charm's Blog !! </p>
+            <p>博客主要用于个人知识管理与积累，如有不对的地方，多多包涵 ~~ </p>
 
 ## 社交设置
 social:
@@ -109,7 +111,7 @@ fontAwesome: //cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css
 
 ## 文章过期提醒功能
 warning:
-  days: 300
+  days: 365
   text: '本文于%d天之前发表，文中内容可能已经过时。'
 
 ## 文章内声明
@@ -117,7 +119,7 @@ declaration:
   enable: true
   title: '转载声明'
   tip: |-
-      商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Charm's Blog</a>
+      商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="http://charmsun.tk/" target="_blank">Charm's Blog</a>
 
 
 ## 主题评论
