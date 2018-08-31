@@ -1,0 +1,409 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Charm&#39;s Blog">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="https://charmsun.github.io">
+    <!--SEO-->
+
+<meta name="description" content="编程学习实践blog"/>
+
+
+
+<meta name="keywords" content="web前端 后端 AI 机器学习"/>
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+
+<title>微信小程序实践总结 | Charm&#39;s Blog</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Charm&#39;s Blog" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.4/css/bootstrap.min.css?rev=3.3.4">
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+
+
+
+
+
+    
+</head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header"  style="background:url(/img/banner.jpg) no-repeat scroll top;background-size: cover"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='Charm Sun'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> 自天佑之，吉无不利 </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/随想/"><i class="fa "></i>随想</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/其他知识/"><i class="fa "></i>其他知识</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="微信小程序实践总结">
+            
+	            微信小程序实践总结
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/前端">
+            前端
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/小程序" title='小程序'>
+                        小程序
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/08/31</span>
+        </span>
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p>依托微信平台，借助于微信的巨大用户量，小程序有着不错的发展趋势，在对微信小程序进行一番探索实践后，做个经验总结。这里就不详细介绍小程序的一些基础知识了，可以仔细研读官方开发文档，再结合demo代码，可以有更好的理解，这里就结合开发中遇到的一些问题进行探讨。</p>
+<p>demo代码位于： <a href="https://github.com/CharmSun/weapp-weshop" target="_blank" rel="noopener">微信小程序客户端和服务端Demo</a></p>
+<p>该demo的开发使用了官方提供的带node.js 服务端的开发模板，在使用该模板开发时，还是发现模板中前端和后端sdk包 有不少问题，建议开发时还是参考 官方的sdk 源码做一些自主的修改。</p>
+<h2 id="小程序中的图片和图标"><a href="#小程序中的图片和图标" class="headerlink" title="小程序中的图片和图标"></a>小程序中的图片和图标</h2><p>在小程序开发过程中，在wxss中想使用图片作背景图时，小程序是不支持从本地图片引入的，需要使用远程网络图片，而在wxml 中image 标签则可使用本地图片或网络图片。在小程序打包大小允许的情况下，使用本地图片可减少网络请求，在小程序页面中尽快显示。当需要从网络加载图片时，可以使用开发者自己的静态资源服务器（如果你的网络服务好的话），或者一些图床服务，小程序开发工具中也提供了一个方便的素材管理功能，申请开通后，就可以直接上传至腾讯云的对象存储中，如图所示。</p>
+<p><img src="image.png" alt="image"></p>
+<p>在开发时我们会需要使用到一些图标，小程序官方也提供了一些基础的图标，但显然是不够用的，在web html的开发时我们常将图标合并以字体文件的形式使用，小程序里也是支持的。但同样，字体文件不支持从本地引入，需要从网络加载，这里可以使用阿里的 iconfont 整理好项目的图标，生成代码，从阿里的cdn引入加载，十分方便。可以在wxss中引入字体资源，也可以通过小程序的动态加载字体接口<code>wx.loadFontFace</code>引入。</p>
+<p><img src="icon.png" alt="icon"></p>
+<h2 id="小程序中的本地存储-storage"><a href="#小程序中的本地存储-storage" class="headerlink" title="小程序中的本地存储 storage"></a>小程序中的本地存储 storage</h2><p>如官方文档所说，每个微信小程序都可以有自己的本地缓存，同一个微信用户，同一个小程序 storage 上限为 10MB。localStorage 以用户维度隔离，同一台设备上，A 用户无法读取到 B 用户的数据。在浏览器web开发中，我们常用cookie的形式来鉴别http的状态，在小程序中我们则可以使用这个本地存储来 存储一些用户登录信息，购物车数据等，可见demo代码中使用情况。那么使用时也需要十分注意这个本地存储的销毁时间，一般在用户使用小程序时，这个本地存储是一直存在的，有以下几种情形会清空这个存储：</p>
+<ol>
+<li>小程序代码主动去清空相关存储</li>
+<li>如果用户储存空间不足，微信会清空最近最久未使用的小程序的本地缓存。</li>
+<li>用户主动将小程序从微信中删除</li>
+</ol>
+<h2 id="小程序的登录问题"><a href="#小程序的登录问题" class="headerlink" title="小程序的登录问题"></a>小程序的登录问题</h2><p>在开发小程序时，看开发文档后，登录是一个比较令人困惑的问题，关于登录和获取微信用户信息在社区中也是讨论最多的两个问题，官方也做了一些相应的解释。这里我就再总结一下。</p>
+<p>在之前小程序启动时，有不少程序员在启动时就调用<code>wx.getUserInfo</code>，这就导致用户在不知道小程序什么样的情况下，就遇到授权弹窗，官方看到不少用户会直接点不允许授权，觉得这种体验方式不好，造成用户流失。因此现在改为不推荐直接调用<code>getUserInfo</code>，而是建议通过按钮点击去让用户授权，获取用户信息，可以让用户先看看小程序长什么样，必要时再去授权。这也造成不少开发者需要去修改代码，有不少吐槽。</p>
+<p>官方提供相关开放接口<code>wx.login</code>，<code>wx.getUserInfo</code>和<code>wx.checkSession</code>等，究竟何时需要使用，怎么使用呢。</p>
+<ol>
+<li>某些轻量小程序或小游戏不需要登录行为，但是也想获取用户信息，可以不使用<code>wx.login</code>接口，直接通过点按钮授权的方式去获取用户信息，也可以使用<code>wx.getUserInfo</code>设置<code>withCredentials</code>参数获取用户信息。</li>
+<li>很多场景下，例如demo中的商店小程序，需要有后端服务，需要接入微信用户，数据库中需要记录订单支付信息，收货地址信息等，这时就需要用到微信提供的<code>wx.login</code>接口。根据官方文档，一个登录的最佳实践是这样的：</li>
+</ol>
+<p><img src="api-login.jpg" alt="login"></p>
+<p>可以按该时序图开发登录过程，在这个过程中需要注意的是：</p>
+<ol>
+<li>注意定期使用 <code>wx.getUserInfo</code>获取并更新用户的信息，防止微信用户在微信中修改了自己的信息；</li>
+<li>目前微信的<code>session_key</code> 有效期是三天，如果开发者设置自己的登录态有效期的话，有效期要小于这个值。不设置的话可以用<code>wx.checkSession</code>去检查是否过期，注意在小程序服务端去更新这个<code>session_key</code>；</li>
+<li>这个<code>session_key</code>同时也是解码密钥，不要直接下发到小程序客户端，可以像demo代码中那样在服务端对其进行SHA1加密后再下发到client。</li>
+</ol>
+<p>在demo代码中用到了官方提供的基于腾讯云的小程序全栈方案，包括了server端sdk，和client端sdk，发现源码有如下一些问题：</p>
+<ol>
+<li>先看client端sdk中封装的request代码，每次当带登录态进行请求时，先调用login接口后再请求，每次login请求都会去走后端的授权中间件部分，对用户信息和<code>session_key</code>进行更新，其实按理是没有必要每次请求都先调login的，也造成请求上的浪费。最好是在必要时去调用login接口更新信息，如登录态失效或<code>session_key</code>过期。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line">function request(options) &#123;</span><br><span class="line">    if (typeof options !== &apos;object&apos;) &#123;</span><br><span class="line">        var message = &apos;请求传参应为 object 类型，但实际传了 &apos; + (typeof options) + &apos; 类型&apos;;</span><br><span class="line">        throw new RequestError(constants.ERR_INVALID_PARAMS, message);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    var requireLogin = options.login;</span><br><span class="line">    var success = options.success || noop;</span><br><span class="line">    var fail = options.fail || noop;</span><br><span class="line">    var complete = options.complete || noop;</span><br><span class="line">    var originHeader = options.header || &#123;&#125;;</span><br><span class="line"></span><br><span class="line">    // 成功回调</span><br><span class="line">    var callSuccess = function () &#123;</span><br><span class="line">        success.apply(null, arguments);</span><br><span class="line">        complete.apply(null, arguments);</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    // 失败回调</span><br><span class="line">    var callFail = function (error) &#123;</span><br><span class="line">        fail.call(null, error);</span><br><span class="line">        complete.call(null, error);</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    // 是否已经进行过重试</span><br><span class="line">    var hasRetried = false;</span><br><span class="line"></span><br><span class="line">    if (requireLogin) &#123;</span><br><span class="line">        doRequestWithLogin();</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        doRequest();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 登录后再请求</span><br><span class="line">    function doRequestWithLogin() &#123;</span><br><span class="line">        loginLib.loginWithCode(&#123; success: doRequest, fail: callFail &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 实际进行请求的方法</span><br><span class="line">    function doRequest() &#123;</span><br><span class="line">        var authHeader = &#123;&#125;</span><br><span class="line"></span><br><span class="line">        if (requireLogin) &#123;</span><br><span class="line">            var session = Session.get();</span><br><span class="line">    </span><br><span class="line">            if (!session) &#123;</span><br><span class="line">                return doRequestWithLogin();</span><br><span class="line">            &#125;</span><br><span class="line">    </span><br><span class="line">            authHeader = buildAuthHeader(session.skey);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        wx.request(utils.extend(&#123;&#125;, options, &#123;</span><br><span class="line">            header: utils.extend(&#123;&#125;, originHeader, authHeader),</span><br><span class="line"></span><br><span class="line">            success: function (response) &#123;</span><br><span class="line">                var data = response.data;</span><br><span class="line"></span><br><span class="line">                var error, message;</span><br><span class="line">                if (data &amp;&amp; data.code === -1) &#123;</span><br><span class="line">                    //Session.clear();</span><br><span class="line">                    // 如果是登录态无效，并且还没重试过，会尝试登录后刷新凭据重新请求</span><br><span class="line">                    if (!hasRetried) &#123;</span><br><span class="line">                        hasRetried = true;</span><br><span class="line">                        doRequestWithLogin();</span><br><span class="line">                        return;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    message = &apos;登录态已过期&apos;;</span><br><span class="line">                    error = new RequestError(data.error, message);</span><br><span class="line"></span><br><span class="line">                    callFail(error);</span><br><span class="line">                    return;</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    callSuccess.apply(null, arguments);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line"></span><br><span class="line">            fail: callFail,</span><br><span class="line">            complete: noop,</span><br><span class="line">        &#125;));</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>再看下后端sdk中鉴权中间件代码，检查登录态失效，会返回code为-1，这样client再请求一次，先调用login接口，不用用户去主动登录，这样的话后端sdk的这个鉴权部分是不是便形同虚设了呢。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">function validation (req) &#123;</span><br><span class="line">    const &#123; &apos;x-wx-skey&apos;: skey &#125; = req.headers</span><br><span class="line">    if (!skey) throw new Error(ERRORS.ERR_SKEY_INVALID)</span><br><span class="line"></span><br><span class="line">    debug(&apos;Valid: skey: %s&apos;, skey)</span><br><span class="line"></span><br><span class="line">    return AuthDbService.getUserInfoBySKey(skey)</span><br><span class="line">        .then(result =&gt; &#123;</span><br><span class="line">            if (result.length === 0) throw new Error(ERRORS.ERR_SKEY_INVALID)</span><br><span class="line">            else result = result[0]</span><br><span class="line">            // 效验登录态是否过期</span><br><span class="line">            const &#123; last_visit_time: lastVisitTime, user_info: userInfo &#125; = result</span><br><span class="line">            const expires = config.wxLoginExpires &amp;&amp; !isNaN(parseInt(config.wxLoginExpires)) ? parseInt(config.wxLoginExpires) * 1000 : 7200 * 1000</span><br><span class="line"></span><br><span class="line">            if (moment(lastVisitTime, &apos;YYYY-MM-DD HH:mm:ss&apos;).valueOf() + expires &lt; Date.now()) &#123;</span><br><span class="line">                debug(&apos;Valid: skey expired, login failed.&apos;)</span><br><span class="line">                return &#123;</span><br><span class="line">                    loginState: LOGIN_STATE.FAILED,</span><br><span class="line">                    userinfo: &#123;&#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                debug(&apos;Valid: login success.&apos;)</span><br><span class="line">                return &#123;</span><br><span class="line">                    loginState: LOGIN_STATE.SUCCESS,</span><br><span class="line">                    userinfo: JSON.parse(userInfo)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当然，上面sdk源码中的这些问题仅仅是我自己的思考，整体使用起来还是能使用的，如果是使用腾讯云的相关服务，配合这套全栈方案还是不错的。如果开发者用自己的服务器，可选择熟悉的后端语言，参考该流程开发。</p>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="http://charmsun.tk/" target="_blank">Charm's Blog</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+        <a href="/2018/06/28/react-redux-selection-optimization/" class="next-post btn btn-default" title='React + Redux 开发中的选型与优化'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">React + Redux 开发中的选型与优化</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+  <script id="dsq-count-scr" src="https://charmsun.disqus.com/count.js" async></script>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_config = function () {
+    this.page.url = 'https://charmsun.github.io/2018/08/31/weapp-summary/';
+    this.page.identifier = '2018/08/31/weapp-summary/';
+    this.page.title = '微信小程序实践总结';
+  };
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://charmsun.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', '' + +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+
+
+	
+
+    </div>
+
+
+
+
+
+                </main>
+                
+    <aside class="col-md-4 sidebar">
+        
+        
+    <div class="widget">    
+        <h3 class="title">搜索</h3>
+        <div id="search-form">
+            <div id="result-mask" class="hide"></div>
+            <div class="search-area">
+                
+                    <input id="search-key" type="search" autocomplete="off" placeholder="搜点什么呢?">
+                    <button type="button" class="search-form-submit" id="search-local">站内搜索</button>
+                
+                
+            </div>
+            <div id="result-wrap" class="hide">
+                <div id="search-result"></div>
+            </div>
+            <div class="hide">
+                <template id="search-tpl">
+                    <div class="item">
+                        <a href="/{path}" title="{title}">
+                            <div class="title">{title}</div>
+                            <div class="content">{content}</div>
+                        </a>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+
+        
+        
+    <div class="widget notification">
+        <h3 class="title">网站公告</h3>
+        <div>
+            <p>Welcome to Charm's Blog !! </p>
+<p>博客主要用于个人知识管理与积累，如有不对的地方，多多包涵 ~~ </p>
+        </div>
+    </div>
+
+        
+        
+    <div class="widget">
+      <h3 class="title">社交</h3> 
+        <div class="content social">
+            
+	            <a href="//github.com/CharmSun" rel="external nofollow" title="Github" target="_blank">
+			    	<i class="git fa fa-git"></i>
+			    </a>
+            
+	            <a href="mailto:261496906@qq.com" rel="external nofollow" title="邮箱" target="_blank">
+			    	<i class="envelope-o fa fa-envelope-o"></i>
+			    </a>
+            
+	            <a href="/atom.xml" rel="external nofollow" title="RSS" target="_blank">
+			    	<i class="feed fa fa-feed"></i>
+			    </a>
+            
+        </div>
+    </div>
+
+
+        
+        
+    <div class="widget">
+        <h3 class="title">分类</h3>
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link current" href="/categories/前端/"><i class="fa" aria-hidden="true">前端</i></a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据库/"><i class="fa" aria-hidden="true">数据库</i></a><span class="category-list-count">1</span></li></ul>
+    </div>
+
+
+        
+        
+    <div class="widget">
+      <h3 class="title">归档</h3>
+        <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/"><i class="fa" aria-hidden="true">2018</i></a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/"><i class="fa" aria-hidden="true">2016</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/"><i class="fa" aria-hidden="true">2015</i></a><span class="archive-list-count">1</span></li></ul>
+    </div>
+
+
+        
+        
+  <div class="widget">
+    <h3 class="title">标签云</h3>
+    <div class="content tag-cloud">
+        <a href="/tags/Immutable/" style="font-size: 10px;">Immutable</a> <a href="/tags/PL-Proxy/" style="font-size: 10px;">PL/Proxy</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/redux/" style="font-size: 10px;">redux</a> <a href="/tags/前端单元测试/" style="font-size: 10px;">前端单元测试</a> <a href="/tags/前端工程化/" style="font-size: 10px;">前端工程化</a> <a href="/tags/小程序/" style="font-size: 10px;">小程序</a> <a href="/tags/持续集成/" style="font-size: 10px;">持续集成</a>
+    </div>
+  </div>
+
+
+        
+        
+    <div class="widget">
+        <h3 class="title">友链</h3>
+        <div class="content friends-link">
+        
+            <a href="https://github.com/CharmSun" class="fa" target="_blank">Github</a>
+        
+        </div>
+    </div>
+
+
+        
+    </aside>
+
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright Charm's Blog &copy; 2018
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+	<script src="/js/search.js?rev=@@hash"></script>
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>
